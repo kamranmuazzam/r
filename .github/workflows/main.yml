@@ -38,13 +38,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "lts/*"
-          cache: "yarn"
+          cache: "npm"
 
       - name: Install frontend dependencies
-        run: yarn install
+        run: npm install
 
       - name: Generate Tauri Private Key
-        run: yarn tauri signer generate -w ~/.tauri/myapp.key
+        run: npm tauri signer generate -w ~/.tauri/myapp.key
 
       - name: Build the app
         uses: tauri-apps/tauri-action@v0.5.7
